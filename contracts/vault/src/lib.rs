@@ -257,7 +257,15 @@ impl Vault {
             panic_with_error!(e, VaultError::NoDebt);
         }
         let pay = if amount > p.debt { p.debt } else { amount };
-        TokenClient::new(e, &cfg.usdc).transfer(&borrower, e.current_contract_address(), &pay);
+        // Recebe sempre `amount` (valor fixo, assinado pelo tomador) e devolve o excedente.
+        // Transferir `pay` (que muda a cada segundo por causa dos juros) fazia a árvore
+        // de autorização da simulação divergir da execução, e a rede rejeitava a transação.
+        let usdc = TokenClient::new(e, &cfg.usdc);
+        let vault = e.current_contract_address();
+        usdc.transfer(&borrower, &vault, &amount);
+        if amount > pay {
+            usdc.transfer(&vault, &borrower, &(amount - pay));
+        }
         p.debt -= pay;
         save(e, &borrower, &p);
         add_total_debt(e, -pay);

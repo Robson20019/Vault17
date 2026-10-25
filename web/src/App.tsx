@@ -127,6 +127,7 @@ export default function App() {
       await refresh();
       return true;
     } catch (e) {
+      console.error(`[vault17] ${label}`, e);
       setNotice({ kind: "error", text: `${label}: ${explainError(e, contractId)}` });
       return false;
     } finally {

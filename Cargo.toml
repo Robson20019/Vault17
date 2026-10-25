@@ -1,8 +1,6 @@
 [workspace]
 resolver = "2"
 members = ["contracts/*"]
-# Antigos tokens OpenZeppelin, substituídos por contracts/token (aluguel caro na testnet)
-exclude = ["contracts/lot_token", "contracts/test_usdc"]
 
 [workspace.dependencies]
 soroban-sdk = "=26.1.1"

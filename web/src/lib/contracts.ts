@@ -51,7 +51,15 @@ export async function write<T>(
   const sent = await tx.signAndSend();
   const hash =
     (sent as unknown as { sendTransactionResponse?: { hash?: string } }).sendTransactionResponse?.hash;
-  return { result: sent.result as T, hash };
+  // A transação já foi confirmada aqui. Algumas respostas da RPC vêm sem o valor de
+  // retorno decodificável (ex.: repay -> i128), e o SDK quebra ao ler; isso não é falha.
+  let result: T | undefined;
+  try {
+    result = sent.result as T;
+  } catch {
+    result = undefined;
+  }
+  return { result: result as T, hash };
 }
 
 // ---------------------------------------------------------------- erros

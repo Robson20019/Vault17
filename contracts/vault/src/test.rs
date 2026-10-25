@@ -199,6 +199,33 @@ fn quitacao_maior_que_a_divida_cobra_so_a_divida() {
 }
 
 #[test]
+fn quitacao_assina_valor_fixo_mesmo_com_juros_correndo() {
+    let c = setup();
+    c.vault.borrow(&c.borrower, &(32_000 * UNIT));
+    c.usdc.mint(&c.borrower, &(1_000 * UNIT));
+    c.e.ledger().set_timestamp(T0 + 3_600); // juros de 1h
+    let pedido = 32_100 * UNIT;
+    let pago = c.vault.repay(&c.borrower, &pedido);
+    assert!(pago > 32_000 * UNIT && pago < pedido);
+    // A autorização do tomador cobre a transferência do valor pedido (fixo), não da dívida.
+    let auths = c.e.auths();
+    let (who, inv) = &auths[0];
+    assert_eq!(who, &c.borrower);
+    let sub = &inv.sub_invocations[0];
+    match &sub.function {
+        soroban_sdk::testutils::AuthorizedFunction::Contract((_, name, args)) => {
+            assert_eq!(name, &soroban_sdk::Symbol::new(&c.e, "transfer"));
+            let amt: i128 = soroban_sdk::TryFromVal::try_from_val(&c.e, &args.get(2).unwrap()).unwrap();
+            assert_eq!(amt, pedido);
+        }
+        _ => panic!("esperava transferência de tUSDC"),
+    }
+    assert_eq!(c.vault.position(&c.borrower).debt, 0);
+    assert_eq!(c.vault.total_debt(), 0);
+    c.vault.withdraw(&c.borrower, &KG);
+}
+
+#[test]
 fn sem_liquidez_nao_empresta() {
     let c = setup();
     // Preço 10x: o limite (320.000) passa a ser maior que o caixa (100.000).

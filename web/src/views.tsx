@@ -347,7 +347,13 @@ export function Borrower({ address, snap, run, busy }: ViewProps) {
           disabled={busy || !address}
           suggestion={snap.lotBalance ? String(snap.lotBalance) : ""}
           button="Depositar"
-          onRun={(v) => run("Depósito de garantia", CONTRACTS.vault, "deposit", { borrower: address, kg: BigInt(v.replace(/\D/g, "")) })}
+          onRun={(v) => {
+            const kgs = BigInt(v.replace(/\D/g, "") || "0");
+            if (kgs > (snap.lotBalance ?? 0n)) {
+              throw new Error(`Esta carteira tem ${String(snap.lotBalance ?? 0n)} kg em tokens do lote. Conecte a carteira do dono do lote.`);
+            }
+            return run("Depósito de garantia", CONTRACTS.vault, "deposit", { borrower: address, kg: kgs });
+          }}
         />
         <AmountAction
           title="Tomar empréstimo"

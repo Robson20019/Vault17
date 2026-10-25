@@ -27,7 +27,6 @@ contracts/
   price_oracle/   mediana de 4 fontes, descarte de fonte fora da curva
   vault/          garantia, LTV, empréstimo, juros, quitação, estados de saúde
   smoke/          contrato descartável de verificação da toolchain
-  lot_token/, test_usdc/  versões antigas com OpenZeppelin (fora do workspace; podem ser apagadas)
 scripts/deploy.ps1  publica e liga tudo na testnet e grava web/.env.local
 web/                painel React + Vite + Stellar Wallets Kit
 ```
@@ -55,7 +54,11 @@ npm run dev
 
 Importe as duas contas de teste criadas pelo script no Freighter
 (`stellar keys show vault17-admin` e `stellar keys show vault17-tomador` → Freighter → Importar).
-Use essas chaves **somente na testnet**.
+Use essas chaves **somente na testnet** e nunca as cole em chats ou issues.
+
+No Freighter, cada conta precisa autorizar o site separadamente: ao trocar de conta,
+clique em **Desconectar** → **Conectar carteira** no painel e aprove com a conta nova
+(rede **Test Net**). Sem isso o Freighter deixa o botão "Confirmar" desativado.
 
 | Conta | Papel na demo |
 | --- | --- |
