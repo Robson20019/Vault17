@@ -1,0 +1,18 @@
+[package]
+name = "vault"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+token = { path = "../token" }
+price_oracle = { path = "../price_oracle" }
+lot_registry = { path = "../lot_registry" }

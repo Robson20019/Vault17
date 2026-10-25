@@ -39,3 +39,6 @@ docs/harness-roadmap.md
 
 # Test / coverage
 coverage/
+
+# Snapshots gerados pelos testes Soroban
+test_snapshots/

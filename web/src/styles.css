@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Barlow", system-ui, sans-serif;
+  --font-cond: "Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+
+  --color-mist: #e8ebf0;      /* fundo: cinza-mineral */
+  --color-paper: #f7f8fa;     /* superfícies */
+  --color-ink: #1d2433;       /* texto */
+  --color-ink-soft: #5a6375;  /* texto secundário */
+  --color-rule: #cfd4dd;      /* linhas */
+  --color-nd: #6c5fa6;        /* lilás do óxido de neodímio: destaque */
+  --color-nd-soft: #e4e0f3;
+  --color-pr: #3e7d5c;        /* verde do praseodímio: saudável */
+  --color-pr-soft: #dcebe2;
+  --color-assay: #b07812;     /* âmbar de laudo: alerta */
+  --color-assay-soft: #f5e8cc;
+  --color-oxide: #b2412f;     /* vermelho de óxido: congelado/liquidável */
+  --color-oxide-soft: #f4dcd7;
+}
+
+html {
+  background: var(--color-mist);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-nd);
+  outline-offset: 2px;
+}
+
+input,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
