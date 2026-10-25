@@ -1,0 +1,12 @@
+# Written by gaide init. Normalizes line endings so shell scripts, hooks and
+# JSON stay LF on every checkout; a CRLF warning from git once made a secret
+# scan abort and report success (see docs/adr/0006-cli-as-check-runtime.md).
+* text=auto eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary

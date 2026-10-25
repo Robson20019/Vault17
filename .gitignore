@@ -1,0 +1,41 @@
+# Rust / Soroban
+target/
+*.wasm
+.stellar/
+
+# Node / front-end
+node_modules/
+dist/
+build/
+.next/
+.cache/
+
+# Environment / secrets (nunca versionar chaves ou seeds)
+.env
+.env.*
+!.env.example
+*.secret
+
+# Local Claude Code overrides
+.claude/settings.local.json
+.claude/.credentials.json
+
+# Local working memory
+PROGRESS.md
+docs/harness-roadmap.md
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs / runtime
+*.log
+*.pid
+*.seed
+*.tgz
+
+# Test / coverage
+coverage/

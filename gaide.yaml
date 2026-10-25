@@ -1,0 +1,48 @@
+# gaide.yaml: what GAIDE installed here and the choices a human made.
+# Edit through `gaide` commands; the CI drift job regenerates from this file.
+schema: 1
+project:
+  name: vault17
+  description: to be written
+  status: in development
+stack:
+  language: undecided
+  framework: undecided
+  database: undecided
+  deployment: undecided
+  package_manager: undecided
+  test_command: none yet
+modules:
+  binding-antigravity: 0.1.0
+  binding-claude-code: 0.1.0
+  core-adr: 0.1.0
+  core-briefing: 0.1.0
+  core-checks: 0.1.0
+  core-constitution: 0.1.0
+  core-git-floor: 0.1.0
+  core-sdd: 0.1.0
+  core-skills: 0.1.0
+  enforcement-inline: 0.1.0
+  mcp-playwright: 0.1.0
+  sast: 0.1.0
+  verifier: 0.1.0
+autonomy:
+  mode: HOTL
+  since: '2026-10-25'
+  adr: docs/adr/0001-autonomy-hotl.md
+profile: standard
+harness:
+  calibrated_for: current generation, to be recorded
+gaide:
+  version: 0.1.0
+  init_date: '2026-10-25'
+template:
+  repo: https://github.com/Ecoa-PUC-Rio/GAIDE
+  ref: local
+  commit: 4d6908cb2ba710ae63b3083c2b826e193719c067
+  source: bundled
+briefing:
+  conventions: to be defined
+  integrations: none yet
+  maintainers: Robson Maia
+  review_channel: GitHub PR

@@ -1,0 +1,207 @@
+{
+  "gaide": "0.1.0",
+  "date": "2026-10-25",
+  "files": {
+    ".agents/rules/gaide.md": {
+      "module": "binding-antigravity",
+      "sha256": "520d683120baaebdfa51d87543ad82e52519c65ed5f36338908807b7891ed655",
+      "owned": false
+    },
+    ".claude/CLAUDE.md": {
+      "module": "binding-claude-code",
+      "sha256": "100d838d7329196d5391c28c03e62c227ad08e99799052241624dd928ec18e12",
+      "owned": false
+    },
+    ".claude/hooks/block-secrets.sh": {
+      "module": "enforcement-inline",
+      "sha256": "cb2d309aefcbcb6036d9a53b841cd5b12e07d6430c572fc9c773da3bc2780c73",
+      "owned": false
+    },
+    ".claude/hooks/check-before-stop.sh": {
+      "module": "enforcement-inline",
+      "sha256": "e396297b26cf4f70ec2ddf0a7d5141bd9af204092662313cf255e88f72a896d7",
+      "owned": false
+    },
+    ".claude/hooks/check-edited-file.sh": {
+      "module": "enforcement-inline",
+      "sha256": "bd98eeed6d3a0db6e5db7dac31d6b616699dbd8b7ca4cbe635f110db5eb1d99c",
+      "owned": false
+    },
+    ".claude/hooks/check-security.sh": {
+      "module": "enforcement-inline",
+      "sha256": "720306de9247b14480f622faf3d6edbd2c8f72f15f9732fa45ff9dfe9becdced",
+      "owned": false
+    },
+    ".claude/settings.json": {
+      "module": "assembled",
+      "sha256": "8ba06c98939147dc277b7b80bb8d00dd1e74d19336469e7fc200d3a5864ebd63",
+      "owned": false
+    },
+    ".gitattributes": {
+      "module": "assembled",
+      "sha256": "a5cfd50cb57b862779521cbbb38527827c6c47e11aab5740710209776cd27fed",
+      "owned": false
+    },
+    ".github/workflows/security.yml": {
+      "module": "core-git-floor",
+      "sha256": "a50387cffc81e3e5bab2091678e907c6f7454f5a19ae5e33839a4d0e68a2fab2",
+      "owned": false
+    },
+    ".gitignore": {
+      "module": "core-briefing",
+      "sha256": "4dbf9716399c2679a74d00c2ab52635b751e0bf7ff812950b49e5f9420c47e05",
+      "owned": true,
+      "sibling": ".gitignore.gaide"
+    },
+    ".mcp.json": {
+      "module": "assembled",
+      "sha256": "33cce2cf02779e998193e0cef04f12b82c335816394e0a72ab5be09f6f91831b",
+      "owned": false
+    },
+    ".pre-commit-config.yaml": {
+      "module": "assembled",
+      "sha256": "a42e120ecac503557c5557a1dd7cc44e06274da6cb07225e9a49ddd492f54c60",
+      "owned": false
+    },
+    "AGENTS.md": {
+      "module": "template",
+      "sha256": "72205b53195c7642b75692e4df2183abe7bdfd3d4339b676c076e1e8756aaf00",
+      "owned": true
+    },
+    "agents/reviewers/code-reviewer.md": {
+      "module": "core-skills",
+      "sha256": "dca7d5f5868d31d8e9ebc6193df0466bc5e8113ced4c549552630537f3363b4c",
+      "owned": false
+    },
+    "agents/reviewers/security-reviewer.md": {
+      "module": "core-skills",
+      "sha256": "4e0d289a09dc2e533a230e4729aedb6fde35ca6792197b22887e12534b87e9c8",
+      "owned": false
+    },
+    "agents/skills/adr-writer.md": {
+      "module": "core-skills",
+      "sha256": "346392a5cf365d33b1350a071c85245f05ea8b12810f7f2bdfa899007407eaed",
+      "owned": false
+    },
+    "agents/skills/code-reviewer.md": {
+      "module": "core-skills",
+      "sha256": "4b9a1295028f2039f0d6dfe8458aeecfea3a3ae3c35c13741f90372c70b515a6",
+      "owned": false
+    },
+    "agents/skills/security-reviewer.md": {
+      "module": "core-skills",
+      "sha256": "f7c0da9695270339b84cd1c72e53d4f0a37d01a59fefc88173beae863a7d94e3",
+      "owned": false
+    },
+    "agents/skills/spec-writer.md": {
+      "module": "core-skills",
+      "sha256": "292cc375829d1106c24cb91b6679eb71e0ad5b576ed150602b139ff750694beb",
+      "owned": false
+    },
+    "agents/skills/test-generator.md": {
+      "module": "core-skills",
+      "sha256": "b6fd1017ef8d2658573f99b9ea2b69797399d0822ed2f205f8881e4bbe6a1234",
+      "owned": false
+    },
+    "agents/skills/verifier.md": {
+      "module": "verifier",
+      "sha256": "b4fc3cff1e67647c31f458e2313e17b59fb7b2b7e754a3b7e6d683b1298bacda",
+      "owned": false
+    },
+    "docs/README.md": {
+      "module": "core-adr",
+      "sha256": "ae6a517435325617cf53018f840a848869863d73d4d0bdf6632e378c943d5f4b",
+      "owned": true
+    },
+    "docs/adr/.gitkeep": {
+      "module": "core-adr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "owned": false
+    },
+    "docs/adr/0001-autonomy-hotl.md": {
+      "module": "autonomy",
+      "sha256": "06c8a11b4a3f557112ffff08fd618ccfc6d07f4240f1417195542be4c12db8c6",
+      "owned": true
+    },
+    "docs/adr/template.md": {
+      "module": "core-adr",
+      "sha256": "d8d2f0d11a3535d657d186098c6805fb8957c5e0c5ae6c3a311ae60d14dc3374",
+      "owned": true
+    },
+    "docs/mcp-setup.md": {
+      "module": "core-briefing",
+      "sha256": "c60bb66a6d4dfbd7204d5842b5c8a566fc103c87b1450f1946692d2b2cb064f2",
+      "owned": true
+    },
+    "init.sh": {
+      "module": "core-briefing",
+      "sha256": "354fa3944f2fa456d342275281178aec9998025b42e8b6989a65dd51e638f1b3",
+      "owned": true
+    },
+    "scripts/check-clean-state.sh": {
+      "module": "core-checks",
+      "sha256": "f0d79604bb6935232197533d415e64f255888cdf22cb1bec37108283c13a316a",
+      "owned": false
+    },
+    "scripts/check-file.sh": {
+      "module": "core-checks",
+      "sha256": "6919ea6c81393488b94c60c825d4da93ce3c7dc6d6d00e59d459a1845f3ef460",
+      "owned": false
+    },
+    "scripts/check-secrets.sh": {
+      "module": "core-checks",
+      "sha256": "c4ad46490341c92bf20db8c1bd3798bc410a4b0ecbcb1a80fc1376702b1d4811",
+      "owned": false
+    },
+    "scripts/check-security.sh": {
+      "module": "core-checks",
+      "sha256": "e3c4363b503c0ad21a59f603b37efa871ddc884dc52a94af716090455c9db5ff",
+      "owned": false
+    },
+    "scripts/sync-adapters.sh": {
+      "module": "core-skills",
+      "sha256": "657868546720440cc4ccfc8fcf1557ff55bf5991fe18532227ae914aad30f58e",
+      "owned": false
+    },
+    "specs/README.md": {
+      "module": "core-sdd",
+      "sha256": "7ce7baa672b656e350216ff6bd4d0e4698aa0039bc1bfdc488c970cd563ad4da",
+      "owned": true
+    },
+    "specs/constitution.md": {
+      "module": "core-constitution",
+      "sha256": "499af4f56308341d80450bdc7346aabe8553df7aa8b387156876ef8ff8d24e85",
+      "owned": true
+    },
+    "specs/example-feature/plan.md": {
+      "module": "core-sdd",
+      "sha256": "c95ee8d3b193b565b9996c7ac4a678522ef4ad2a65eb44b957de5fb82617635b",
+      "owned": false
+    },
+    "specs/example-feature/spec.md": {
+      "module": "core-sdd",
+      "sha256": "936008c25560e18ee46049caf6400fe7fbc869c21c16212fd440ee14e4bc757f",
+      "owned": false
+    },
+    "specs/example-feature/tasks.md": {
+      "module": "core-sdd",
+      "sha256": "2461f3a7c7d9bec24a8f2b4411fead3722a31cc9ad25789794f3af5fd2452dee",
+      "owned": false
+    },
+    "specs/template/plan.md": {
+      "module": "core-sdd",
+      "sha256": "a736743b8f7ac39ea696cc569754ad1828a08ab930c74da4fbf3af67c9388fa3",
+      "owned": true
+    },
+    "specs/template/spec.md": {
+      "module": "core-sdd",
+      "sha256": "ccf28732553dfaad1a663cabb8f0aa0636a16604ad760aabc3b696cd01780a94",
+      "owned": true
+    },
+    "specs/template/tasks.md": {
+      "module": "core-sdd",
+      "sha256": "983b04189a43bb296d8a4348b9a37f0937344353e8d272e1a20b9edbe6d8ce73",
+      "owned": true
+    }
+  }
+}
